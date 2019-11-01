@@ -15,7 +15,6 @@ Have a working example of how a QA automation project can be deployed and execut
 - Maven
 - REST Assured
 - Castle Mock
-- Kubernetes
 
 ### Milestones
 1. Create base API test framework with REST Assured
