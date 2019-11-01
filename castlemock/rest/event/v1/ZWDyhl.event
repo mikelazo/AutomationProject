@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<restEvent>
+    <endDate>2019-11-01T01:59:09.576Z</endDate>
+    <id>ZWDyhl</id>
+    <resourceName>Get Users</resourceName>
+    <startDate>2019-11-01T01:59:09.572Z</startDate>
+    <applicationId>izoQVd</applicationId>
+    <methodId>0leXBd</methodId>
+    <projectId>mhAjF9</projectId>
+    <request>
+        <body></body>
+        <httpHeaders>
+            <httpHeader>
+                <name>host</name>
+                <value>localhost:8081</value>
+            </httpHeader>
+            <httpHeader>
+                <name>user-agent</name>
+                <value>curl/7.64.1</value>
+            </httpHeader>
+            <httpHeader>
+                <name>accept</name>
+                <value>application/json</value>
+            </httpHeader>
+        </httpHeaders>
+        <httpMethod>GET</httpMethod>
+        <httpParameters/>
+        <uri>/users</uri>
+    </request>
+    <resourceId>sIO2YU</resourceId>
+    <response>
+        <body>[&#13;
+	{&#13;
+		"name": "admin",&#13;
+		"username": "admin",&#13;
+		"role": "administrator",&#13;
+		"active": "0"&#13;
+	},&#13;
+	{&#13;
+		"name": "Lucas Hale",&#13;
+		"username": "lhale",&#13;
+		"role": "manager",&#13;
+		"active": "1"&#13;
+	},&#13;
+	{&#13;
+		"name": "Holly Salas",&#13;
+		"username": "hsalas",&#13;
+		"role": "manager",&#13;
+		"active": "1"&#13;
+	},&#13;
+	{&#13;
+		"name": "Lilly Ayers",&#13;
+		"username": "layers",&#13;
+		"role": "employee",&#13;
+		"active": "1"&#13;
+	},&#13;
+	{&#13;
+		"name": "Geoffrey Jordan",&#13;
+		"username": "gjordan",&#13;
+		"role": "employee",&#13;
+		"active": "1"&#13;
+	},&#13;
+	{&#13;
+		"name": "Monica Barry",&#13;
+		"username": "mbarry",&#13;
+		"role": "employee",&#13;
+		"active": "0"&#13;
+	},&#13;
+	{&#13;
+		"name": "Herman Sandoval",&#13;
+		"username": "hsandoval",&#13;
+		"role": "employee",&#13;
+		"active": "1"&#13;
+	}&#13;
+]&#13;
+</body>
+        <contentEncodings/>
+        <httpHeaders>
+            <httpHeader>
+                <name>Content-Type</name>
+                <value>application/json</value>
+            </httpHeader>
+        </httpHeaders>
+        <httpStatusCode>200</httpStatusCode>
+        <mockResponseName>Success - json</mockResponseName>
+    </response>
+</restEvent>
