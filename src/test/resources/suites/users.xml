@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Users">
+    <test name="Get Users">
+        <parameter name="responseContentsPath" value="responses/users.json"/>
+        <classes>
+            <class name="samples.SampleTests"/>
+        </classes>
+    </test>
+</suite>
