@@ -25,3 +25,14 @@ Have a working example of how a QA automation project can be deployed and execut
 5. Create docker image with Jenkins and jobs to execute tests
 6. Push docker images to public Docker repository
 7. Update README with prerequisites and instructions to deploy these docker containers and execute tests.
+
+### Running/Stopping Docker Images/Containers
+Run docker images:
+```
+mvn docker:start
+```
+
+Stop and remove docker containers:
+```
+mvn docker:stop
+```
