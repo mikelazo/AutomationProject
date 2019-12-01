@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.jenkins-ci.plugins</groupId>
   <artifactId>jira</artifactId>
-  <version>3.0.10</version>
+  <version>3.0.11</version>
   <packaging>hpi</packaging>
   <name>Jenkins JIRA plugin</name>
   <description>Integrates Jenkins to JIRA</description>
@@ -30,7 +30,7 @@
   <scm>
     <connection>scm:git:git://github.com/jenkinsci/jira-plugin.git</connection>
     <developerConnection>scm:git:git@github.com:jenkinsci/jira-plugin.git</developerConnection>
-    <tag>jira-3.0.10</tag>
+    <tag>jira-3.0.11</tag>
     <url>https://github.com/jenkinsci/jira-plugin</url>
   </scm>
   <issueManagement>
@@ -209,7 +209,7 @@
     <dependency>
       <groupId>org.jenkins-ci.plugins</groupId>
       <artifactId>credentials</artifactId>
-      <version>2.1.14</version>
+      <version>2.1.19</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
