@@ -44,6 +44,27 @@
                                 </volumes>
                             </run>
                         </image>
+                        <image>
+                            <alias>jenkins</alias>
+                            <name>jenkinsci/blueocean</name>
+
+                            <run>
+                                <ports>
+                                    <port>jenkins.port:8080</port>
+                                </ports>
+                                <wait>
+                                    <http>
+                                        <url>http://localhost:${jenkins.port}</url>
+                                    </http>
+                                    <time>60000</time>
+                                </wait>
+                                <volumes>
+                                    <bind>
+                                        <volume>${project.basedir}/jenkins:/var/jenkins_home</volume>
+                                    </bind>
+                                </volumes>
+                            </run>
+                        </image>
                     </images>
                 </configuration>
 
