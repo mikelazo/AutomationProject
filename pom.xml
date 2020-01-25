@@ -7,88 +7,38 @@
     <groupId>demo</groupId>
     <artifactId>automationproject</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>8</source>
-                    <target>8</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>io.fabric8</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <version>0.31.0</version>
-                <configuration>
-                    <images>
-                        <image>
-                            <alias>castlemock</alias>
-                            <name>castlemock/castlemock</name>
-
-                            <run>
-                                <ports>
-                                    <port>castlemock.port:8080</port>
-                                </ports>
-                                <wait>
-                                    <http>
-                                        <url>http://localhost:${castlemock.port}/castlemock</url>
-                                    </http>
-                                    <time>60000</time>
-                                </wait>
-                                <volumes>
-                                    <bind>
-                                        <volume>${project.basedir}/castlemock:/root/.castlemock</volume>
-                                    </bind>
-                                </volumes>
-                            </run>
-                        </image>
-                        <image>
-                            <alias>jenkins</alias>
-                            <name>jenkinsci/blueocean</name>
-
-                            <run>
-                                <ports>
-                                    <port>jenkins.port:8080</port>
-                                </ports>
-                                <wait>
-                                    <http>
-                                        <url>http://localhost:${jenkins.port}</url>
-                                    </http>
-                                    <time>60000</time>
-                                </wait>
-                                <volumes>
-                                    <bind>
-                                        <volume>${project.basedir}/jenkins:/var/jenkins_home</volume>
-                                    </bind>
-                                </volumes>
-                            </run>
-                        </image>
-                    </images>
-                </configuration>
-
-                <executions>
-                    <execution>
-                        <id>start</id>
-                        <phase>pre-integration-test</phase>
-                        <goals>
-                            <goal>build</goal>
-                            <goal>start</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>stop</id>
-                        <phase>post-integration-test</phase>
-                        <goals>
-                            <goal>stop</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>8</source>
+                        <target>8</target>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M4</version>
+                    <configuration>
+                        <suiteXmlFiles>
+                            <suiteXmlFile>${project.build.directory}/test-classes/${suite}</suiteXmlFile>
+                        </suiteXmlFiles>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
-    <packaging>jar</packaging>
+
+    <modules>
+        <module>ui</module>
+        <module>api</module>
+        <module>docker</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <name>learning</name>
     <url>http://maven.apache.org</url>
@@ -96,49 +46,44 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <dependencies>
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured-common</artifactId>
-            <version>4.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>4.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>json-path</artifactId>
-            <version>4.1.1</version>
-        </dependency>
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>xml-path</artifactId>
-            <version>4.1.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.seleniumhq.selenium</groupId>
-            <artifactId>selenium-java</artifactId>
-            <version>3.11.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>6.10</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>7.0.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>xml-path</artifactId>
-            <version>4.1.1</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <!--REST ASSURED-->
+            <dependency>
+                <groupId>io.rest-assured</groupId>
+                <artifactId>rest-assured-common</artifactId>
+                <version>4.1.1</version>
+            </dependency>
+            <dependency>
+                <groupId>io.rest-assured</groupId>
+                <artifactId>rest-assured</artifactId>
+                <version>4.1.1</version>
+            </dependency>
+            <dependency>
+                <groupId>io.rest-assured</groupId>
+                <artifactId>json-path</artifactId>
+                <version>4.1.1</version>
+            </dependency>
+            <dependency>
+                <groupId>io.rest-assured</groupId>
+                <artifactId>xml-path</artifactId>
+                <version>4.1.1</version>
+                <scope>compile</scope>
+            </dependency>
+
+            <!--SELENIUM-->
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <version>3.141.59</version>
+            </dependency>
+
+            <!--TESTING FRAMEWORK-->
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>7.0.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>
