@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<restMethod>
+    <currentResponseSequenceIndex>0</currentResponseSequenceIndex>
+    <defaultMockResponseId></defaultMockResponseId>
+    <forwardedEndpoint></forwardedEndpoint>
+    <httpMethod>GET</httpMethod>
+    <id>0leXBd</id>
+    <name>Get Users</name>
+    <networkDelay>0</networkDelay>
+    <resourceId>sIO2YU</resourceId>
+    <responseStrategy>HEADER_QUERY_MATCH</responseStrategy>
+    <simulateNetworkDelay>false</simulateNetworkDelay>
+    <status>MOCKED</status>
+</restMethod>
