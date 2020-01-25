@@ -1,24 +1,22 @@
 package samples;
 
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeSuite;
+import demo.automationproject.utils.properties.Properties;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
-import java.util.Properties;
+
+import static io.restassured.RestAssured.*;
 
 public class ApiTest {
-    Properties prop = new Properties();
 
-    @BeforeTest
-    public void getPropertiesFile() throws IOException {
-        // ToDo: Figure out relative path, this was not working
-        FileInputStream fis = new FileInputStream("src/main/java/resources/config.properties");
-        prop.load(fis);
+    @BeforeSuite
+    public void getProperties() {
+        baseURI = Properties.getProperty("baseURI");
     }
 
     /**
