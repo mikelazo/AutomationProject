@@ -44,7 +44,7 @@
                                 </volumes>
                             </run>
                         </image>
-                        <image>
+                        <!--image>
                             <alias>jenkins</alias>
                             <name>jenkinsci/blueocean</name>
 
@@ -64,7 +64,7 @@
                                     </bind>
                                 </volumes>
                             </run>
-                        </image>
+                        </image-->
                     </images>
                 </configuration>
 

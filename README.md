@@ -26,13 +26,24 @@ Have a working example of how a QA automation project can be deployed and execut
 6. Push docker images to public Docker repository
 7. Update README with prerequisites and instructions to deploy these docker containers and execute tests.
 
+### Prerequisites
+- JDK 8
+- Maven 3.6.1 or higher
+- Git
+- Docker
+
 ### Running/Stopping Docker Images/Containers
 Run docker images:
 ```
-mvn docker:start
+mvn -pl docker docker:start
+```
+
+Execute API tests
+```
+mvn clean test -pl api -am -Dsuite=suites/users.xml
 ```
 
 Stop and remove docker containers:
 ```
-mvn docker:stop
+mvn -pl docker docker:stop
 ```
