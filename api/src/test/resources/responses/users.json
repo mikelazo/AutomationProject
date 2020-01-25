@@ -1,0 +1,48 @@
+{
+  "users": {
+    "user": [
+      {
+        "name": "admin",
+        "username": "admin",
+        "role": "administrator",
+        "active": "0"
+      },
+      {
+        "name": "Lucas Hale",
+        "username": "lhale",
+        "role": "manager",
+        "active": "1"
+      },
+      {
+        "name": "Holly Salas",
+        "username": "hsalas",
+        "role": "manager",
+        "active": "1"
+      },
+      {
+        "name": "Lilly Ayers",
+        "username": "layers",
+        "role": "employee",
+        "active": "1"
+      },
+      {
+        "name": "Geoffrey Jordan",
+        "username": "gjordan",
+        "role": "employee",
+        "active": "1"
+      },
+      {
+        "name": "Monica Barry",
+        "username": "mbarry",
+        "role": "employee",
+        "active": "0"
+      },
+      {
+        "name": "Herman Sandoval",
+        "username": "hsandoval",
+        "role": "employee",
+        "active": "1"
+      }
+    ]
+  }
+}
