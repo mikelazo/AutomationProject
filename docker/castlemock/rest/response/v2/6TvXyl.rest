@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<restMockResponse>
+    <body>&lt;?xml version="1.0" ?&gt;&#13;
+&lt;users&gt;&#13;
+	&lt;user&gt;&#13;
+		&lt;name&gt;admin&lt;/name&gt;&#13;
+		&lt;username&gt;admin&lt;/username&gt;&#13;
+		&lt;role&gt;administrator&lt;/role&gt;&#13;
+		&lt;active&gt;0&lt;/active&gt;&#13;
+	&lt;/user&gt;&#13;
+	&lt;user&gt;&#13;
+		&lt;name&gt;Lucas Hale&lt;/name&gt;&#13;
+		&lt;username&gt;lhale&lt;/username&gt;&#13;
+		&lt;role&gt;manager&lt;/role&gt;&#13;
+		&lt;active&gt;1&lt;/active&gt;&#13;
+	&lt;/user&gt;&#13;
+	&lt;user&gt;&#13;
+		&lt;name&gt;Holly Salas&lt;/name&gt;&#13;
+		&lt;username&gt;hsalas&lt;/username&gt;&#13;
+		&lt;role&gt;manager&lt;/role&gt;&#13;
+		&lt;active&gt;1&lt;/active&gt;&#13;
+	&lt;/user&gt;&#13;
+	&lt;user&gt;&#13;
+		&lt;name&gt;Lilly Ayers&lt;/name&gt;&#13;
+		&lt;username&gt;layers&lt;/username&gt;&#13;
+		&lt;role&gt;employee&lt;/role&gt;&#13;
+		&lt;active&gt;1&lt;/active&gt;&#13;
+	&lt;/user&gt;&#13;
+	&lt;user&gt;&#13;
+		&lt;name&gt;Geoffrey Jordan&lt;/name&gt;&#13;
+		&lt;username&gt;gjordan&lt;/username&gt;&#13;
+		&lt;role&gt;employee&lt;/role&gt;&#13;
+		&lt;active&gt;1&lt;/active&gt;&#13;
+	&lt;/user&gt;&#13;
+	&lt;user&gt;&#13;
+		&lt;name&gt;Monica Barry&lt;/name&gt;&#13;
+		&lt;username&gt;mbarry&lt;/username&gt;&#13;
+		&lt;role&gt;employee&lt;/role&gt;&#13;
+		&lt;active&gt;0&lt;/active&gt;&#13;
+	&lt;/user&gt;&#13;
+	&lt;user&gt;&#13;
+		&lt;name&gt;Herman Sandoval&lt;/name&gt;&#13;
+		&lt;username&gt;hsandoval&lt;/username&gt;&#13;
+		&lt;role&gt;employee&lt;/role&gt;&#13;
+		&lt;active&gt;1&lt;/active&gt;&#13;
+	&lt;/user&gt;&#13;
+&lt;/users&gt;</body>
+    <contentEncodings/>
+    <headerQueries>
+        <headerQuery>
+            <header>Accept</header>
+            <matchAny>false</matchAny>
+            <matchCase>true</matchCase>
+            <matchRegex>false</matchRegex>
+            <query>application/xml</query>
+        </headerQuery>
+    </headerQueries>
+    <httpHeaders>
+        <httpHeader>
+            <name>Content-Type</name>
+            <value>application/xml</value>
+        </httpHeader>
+    </httpHeaders>
+    <httpStatusCode>200</httpStatusCode>
+    <id>6TvXyl</id>
+    <jsonPathExpressions/>
+    <methodId>0leXBd</methodId>
+    <name>Success - xml</name>
+    <parameterQueries/>
+    <status>ENABLED</status>
+    <usingExpressions>false</usingExpressions>
+    <xpathExpressions/>
+</restMockResponse>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<restEvent>
+    <endDate>2019-10-18T22:34:54.480Z</endDate>
+    <id>CsCsCX</id>
+    <resourceName>Get Users</resourceName>
+    <startDate>2019-10-18T22:34:54.480Z</startDate>
+    <applicationId>izoQVd</applicationId>
+    <methodId>0leXBd</methodId>
+    <projectId>mhAjF9</projectId>
+    <request>
+        <body></body>
+        <httpHeaders>
+            <httpHeader>
+                <name>host</name>
+                <value>localhost:8081</value>
+            </httpHeader>
+            <httpHeader>
+                <name>user-agent</name>
+                <value>curl/7.64.1</value>
+            </httpHeader>
+            <httpHeader>
+                <name>accept</name>
+                <value>application/xml2</value>
+            </httpHeader>
+        </httpHeaders>
+        <httpMethod>GET</httpMethod>
+        <httpParameters/>
+        <uri>/users</uri>
+    </request>
+    <resourceId>sIO2YU</resourceId>
+</restEvent>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<restEvent>
+    <endDate>2019-10-31T23:40:29.436Z</endDate>
+    <id>QwLeJV</id>
+    <resourceName>Get Users</resourceName>
+    <startDate>2019-10-31T23:40:29.427Z</startDate>
+    <applicationId>izoQVd</applicationId>
+    <methodId>0leXBd</methodId>
+    <projectId>mhAjF9</projectId>
+    <request>
+        <body></body>
+        <httpHeaders>
+            <httpHeader>
+                <name>host</name>
+                <value>localhost:8081</value>
+            </httpHeader>
+            <httpHeader>
+                <name>user-agent</name>
+                <value>curl/7.64.1</value>
+            </httpHeader>
+            <httpHeader>
+                <name>accept</name>
+                <value>application/xml</value>
+            </httpHeader>
+        </httpHeaders>
+        <httpMethod>GET</httpMethod>
+        <httpParameters/>
+        <uri>/users</uri>
+    </request>
+    <resourceId>sIO2YU</resourceId>
+    <response>
+        <body>&lt;?xml version="1.0" ?&gt;&#13;
+&lt;users&gt;&#13;
+	&lt;user&gt;&#13;
+		&lt;name&gt;admin&lt;/name&gt;&#13;
+		&lt;username&gt;admin&lt;/username&gt;&#13;
+		&lt;role&gt;administrator&lt;/role&gt;&#13;
+		&lt;active&gt;0&lt;/active&gt;&#13;
+	&lt;/user&gt;&#13;
+	&lt;user&gt;&#13;
+		&lt;name&gt;Lucas Hale&lt;/name&gt;&#13;
+		&lt;username&gt;lhale&lt;/username&gt;&#13;
+		&lt;role&gt;manager&lt;/role&gt;&#13;
+		&lt;active&gt;1&lt;/active&gt;&#13;
+	&lt;/user&gt;&#13;
+	&lt;user&gt;&#13;
+		&lt;name&gt;Holly Salas&lt;/name&gt;&#13;
+		&lt;username&gt;hsalas&lt;/username&gt;&#13;
+		&lt;role&gt;manager&lt;/role&gt;&#13;
+		&lt;active&gt;1&lt;/active&gt;&#13;
+	&lt;/user&gt;&#13;
+	&lt;user&gt;&#13;
+		&lt;name&gt;Lilly Ayers&lt;/name&gt;&#13;
+		&lt;username&gt;layers&lt;/username&gt;&#13;
+		&lt;role&gt;employee&lt;/role&gt;&#13;
+		&lt;active&gt;1&lt;/active&gt;&#13;
+	&lt;/user&gt;&#13;
+	&lt;user&gt;&#13;
+		&lt;name&gt;Geoffrey Jordan&lt;/name&gt;&#13;
+		&lt;username&gt;gjordan&lt;/username&gt;&#13;
+		&lt;role&gt;employee&lt;/role&gt;&#13;
+		&lt;active&gt;1&lt;/active&gt;&#13;
+	&lt;/user&gt;&#13;
+	&lt;user&gt;&#13;
+		&lt;name&gt;Monica Barry&lt;/name&gt;&#13;
+		&lt;username&gt;mbarry&lt;/username&gt;&#13;
+		&lt;role&gt;employee&lt;/role&gt;&#13;
+		&lt;active&gt;0&lt;/active&gt;&#13;
+	&lt;/user&gt;&#13;
+	&lt;user&gt;&#13;
+		&lt;name&gt;Herman Sandoval&lt;/name&gt;&#13;
+		&lt;username&gt;hsandoval&lt;/username&gt;&#13;
+		&lt;role&gt;employee&lt;/role&gt;&#13;
+		&lt;active&gt;1&lt;/active&gt;&#13;
+	&lt;/user&gt;&#13;
+&lt;/users&gt;</body>
+        <contentEncodings/>
+        <httpHeaders>
+            <httpHeader>
+                <name>Content-Type</name>
+                <value>application/xml</value>
+            </httpHeader>
+        </httpHeaders>
+        <httpStatusCode>200</httpStatusCode>
+        <mockResponseName>Success - xml</mockResponseName>
+    </response>
+</restEvent>

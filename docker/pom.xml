@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>automationproject</artifactId>
+        <groupId>demo</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>docker</artifactId>
+
+    <properties>
+        <castlemock.port>8081</castlemock.port>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>io.fabric8</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.31.0</version>
+                <configuration>
+                    <images>
+                        <image>
+                            <alias>castlemock</alias>
+                            <name>castlemock/castlemock</name>
+
+                            <run>
+                                <ports>
+                                    <port>castlemock.port:8080</port>
+                                </ports>
+                                <wait>
+                                    <http>
+                                        <url>http://localhost:${castlemock.port}/castlemock</url>
+                                    </http>
+                                    <time>60000</time>
+                                </wait>
+                                <volumes>
+                                    <bind>
+                                        <volume>${project.build.directory}/castlemock:/root/.castlemock</volume>
+                                    </bind>
+                                </volumes>
+                            </run>
+                        </image>
+                        <!--image>
+                            <alias>jenkins</alias>
+                            <name>jenkinsci/blueocean</name>
+
+                            <run>
+                                <ports>
+                                    <port>jenkins.port:8080</port>
+                                </ports>
+                                <wait>
+                                    <http>
+                                        <url>http://localhost:${jenkins.port}</url>
+                                    </http>
+                                    <time>60000</time>
+                                </wait>
+                                <volumes>
+                                    <bind>
+                                        <volume>${project.build.directory}/jenkins:/var/jenkins_home</volume>
+                                    </bind>
+                                </volumes>
+                            </run>
+                        </image-->
+                    </images>
+                </configuration>
+
+                <executions>
+                    <execution>
+                        <id>start</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>start</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>stop</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>stop</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
