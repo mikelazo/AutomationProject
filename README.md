@@ -10,8 +10,6 @@ Have a working example of how a QA automation project can be deployed and execut
 ### Technologies
 - Docker
 - Jenkins
-    - Folder structure used for running docker container with persistent data.
-    - docker run -p 8080:8080 -v `<Your Path to Jenkins Folder>`:/var/jenkins_home jenkinsci/blueocean
 - Java
 - TestNG
 - Maven
