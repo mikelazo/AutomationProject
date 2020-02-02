@@ -55,11 +55,28 @@ public class PropertiesTest {
 
     /**
      * Tests that valid properties' (system or from config.properties) values are successfully retrieved.
+     * Also tests that invalid properties do not throw an exception and instead have null or empty values.
      */
     @Test(dataProvider = "properties")
     public void getProperty(String key, boolean containsValue) {
-        String value = Properties.getProperty(key);
+        String value = Properties.getProperty(key, false);
         Assert.assertEquals((value != null && !value.isEmpty()), containsValue, "Property '" + key + "' was retrieved with an unexpected result.");
+    }
+
+    /**
+     * Tests that an invalid property throws IllegalStateException.
+     */
+    @Test(expectedExceptions = {IllegalStateException.class})
+    public void getPropertyInvalidKey() {
+        Properties.getProperty("ThisIsNotARealKey");
+    }
+
+    /**
+     * Tests that an invalid property throws IllegalStateException when overridden method with isRequired set to true.
+     */
+    @Test(expectedExceptions = {IllegalStateException.class})
+    public void getPropertyInvalidKeySpecifyRequired() {
+        Properties.getProperty("ThisIsNotARealKey", true);
     }
 
     /**

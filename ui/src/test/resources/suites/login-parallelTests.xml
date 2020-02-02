@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Login" parallel="tests">
+    <test name="Login Page">
+        <classes>
+            <class name="demo.automationproject.ui.test.LoginTest">
+                <methods>
+                    <include name="validateElements"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Invalid Login">
+        <classes>
+            <class name="demo.automationproject.ui.test.LoginTest">
+                <methods>
+                    <include name="invalidLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
