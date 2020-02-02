@@ -61,9 +61,22 @@ public class Properties {
      * Retrieves the value for the specified key from the system properties. If the key is not found in the system properties, then attempt to retrieve the value from config.properties.
      *
      * @param key The key name associated with the value.
-     * @return he value of the key, or null if it is not found.
+     * @return The value of the key, or null if it is not found.
+     * @throws IllegalStateException if no value is found for the specified key.
      */
     public static String getProperty(String key) {
+        return getProperty(key, true);
+    }
+
+    /**
+     * Retrieves the value for the specified key from the system properties. If the key is not found in the system properties, then attempt to retrieve the value from config.properties.
+     *
+     * @param key        The key name associated with the value.
+     * @param isRequired Determines whether or not a value must exist for the specified key.
+     * @return The value of the key, or null if it is not found.
+     * @throws IllegalStateException if no value is found for the specified key and isRequired is true.
+     */
+    public static String getProperty(String key, boolean isRequired) {
         validateKey(key);
 
         String value = System.getProperty(key);
@@ -71,6 +84,11 @@ public class Properties {
         // Get the property value from the config.properties file if the value does not exist in the system properties.
         if (Strings.IsNullOrEmpty(value)) {
             value = prop.getProperty(key);
+
+            // If the value is still null or empty for a required property, then throw an exception.
+            if (isRequired && Strings.IsNullOrEmpty(value)) {
+                throw new IllegalStateException("Required system property '" + key + "' was not found.");
+            }
         }
 
         return value;
