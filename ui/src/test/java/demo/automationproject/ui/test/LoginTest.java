@@ -3,6 +3,7 @@ package demo.automationproject.ui.test;
 import demo.automationproject.ui.page.Home;
 import demo.automationproject.ui.page.Login;
 import org.testng.Assert;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -19,6 +20,11 @@ public class LoginTest extends UiTest {
                 {"sfisher", "password"},
                 {"hlamarr", "password"}
         };
+    }
+
+    @BeforeTest
+    public void forceWait() throws InterruptedException {
+        Thread.sleep(10000);
     }
 
     /**

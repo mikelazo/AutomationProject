@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Validate Login">
+    <test name="Validate Login Page">
+        <classes>
+            <class name="demo.automationproject.ui.test.LoginTest">
+                <methods>
+                    <include name="validateElements"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

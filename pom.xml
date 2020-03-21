@@ -7,6 +7,11 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <skipTests>false</skipTests>
+    </properties>
+
     <build>
         <pluginManagement>
             <plugins>
@@ -27,6 +32,7 @@
                         <systemPropertyVariables>
                             <configPath>${maven.multiModuleProjectDirectory}/config.properties</configPath>
                         </systemPropertyVariables>
+                        <skipTests>${skipTests}</skipTests>
                     </configuration>
                 </plugin>
             </plugins>
@@ -44,9 +50,6 @@
     <name>learning</name>
     <url>http://maven.apache.org</url>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
     <dependencyManagement>
         <dependencies>
             <!--REST ASSURED-->
